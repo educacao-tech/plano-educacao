@@ -1,152 +1,144 @@
+/* Estilos Gerais do Body e Fontes */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f0f2f5;
+    background-color: #f0f2f5; /* Fundo suave */
     color: #333;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o rodapé fique no final */
 }
 
+/* Estilos do Cabeçalho */
 header {
-    background-color: #4CAF50; /* Verde vibrante */
+    background-color: #007bff; /* Cor principal */
     color: white;
-    padding: 30px 10px;
+    padding: 30px 20px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
     margin: 0 0 10px;
     font-size: 2.8em;
+    font-weight: 700;
 }
 
 header p {
-    font-size: 1.2em;
+    margin: 0;
+    font-size: 1.1em;
     opacity: 0.9;
 }
 
+/* Estilos da Seção Principal de Conteúdo */
 main {
-    max-width: 960px;
-    margin: 30px auto;
+    flex-grow: 1; /* Permite que o conteúdo principal ocupe o espaço disponível */
+    max-width: 960px; /* Largura máxima do conteúdo */
+    margin: 40px auto; /* Centraliza o conteúdo e adiciona margens */
     padding: 0 20px;
 }
 
-section {
+/* Estilos das Seções de Documentos e Informações */
+.document-section, .info-section {
     background-color: #fff;
     padding: 30px;
-    margin-bottom: 25px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
 }
 
-section h2 {
-    color: #3f51b5; /* Azul institucional */
+.document-section h2, .info-section h2 {
+    color: #2c3e50;
     font-size: 2em;
     margin-top: 0;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     text-align: center;
 }
 
+/* Estilos da Grade de Botões (Documentos) */
 .button-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    justify-content: center;
-    margin-top: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Botões responsivos */
+    gap: 20px; /* Espaçamento entre os botões */
 }
 
 .document-button {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 25px;
-    background-color: #64b5f6; /* Azul claro para botões */
-    color: white;
+    flex-direction: column; /* Ícone em cima, texto embaixo */
+    align-items: center; /* Centraliza horizontalmente */
     text-decoration: none;
-    border-radius: 10px; /* Cantos um pouco mais arredondados */
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Sombra mais visível */
-    height: 150px;
-    position: relative;
-    overflow: hidden;
-    border: 2px solid transparent; /* Borda transparente para efeito no hover */
+    background-color: #f8f9fa; /* Fundo mais claro */
+    color: #007bff; /* Cor do texto e ícone */
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .document-button:hover {
-    background-color: #2196f3; /* Azul mais escuro no hover */
-    transform: translateY(-7px); /* Efeito de elevação mais pronunciado */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25); /* Sombra mais intensa no hover */
-    border-color: #1976d2; /* Borda azul mais escura no hover */
+    background-color: #e9ecef;
+    border-color: #0056b3;
+    color: #0056b3;
+    transform: translateY(-3px); /* Efeito de "levantar" */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .document-button .icon {
-    font-size: 3.8em; /* Ícone um pouco maior */
-    margin-bottom: 12px;
-    line-height: 1;
-    transition: transform 0.2s ease;
-}
-
-.document-button:hover .icon {
-    transform: scale(1.1); /* Ícone cresce um pouco no hover */
+    font-size: 3em; /* Tamanho do ícone */
+    margin-bottom: 10px;
 }
 
 .document-button .text {
-    font-size: 1.15em; /* Texto um pouco maior */
+    font-size: 1.1em;
     font-weight: bold;
-    text-transform: uppercase; /* Texto em maiúsculas */
-    letter-spacing: 0.5px; /* Pequeno espaçamento entre letras */
-    transition: color 0.2s ease;
+    text-align: center;
 }
 
-.document-button:hover .text {
-    color: #e0e0e0; /* Pequena mudança de cor no texto no hover */
+/* Estilos da Seção de Informações */
+.info-section p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: #555;
 }
 
-/* Efeito de "Onda" ou "Brilho" ao Clicar */
-.document-button::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 5px;
-    height: 5px;
-    background: rgba(255, 255, 255, 0.4);
-    border-radius: 50%;
-    opacity: 0;
-    transform: scale(1) translate(-50%, -50%);
-    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+/* Estilos do Rodapé */
+footer {
+    background-color: #343a40; /* Cor escura para o rodapé */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    margin-top: auto; /* Empurra o rodapé para a parte inferior da página */
 }
 
-.document-button:active::after {
-    transform: scale(20) translate(-50%, -50%);
-    opacity: 1;
-    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+footer p {
+    margin: 5px 0;
 }
 
-/* Responsividade */
+/* Responsividade Básica */
 @media (max-width: 768px) {
     header h1 {
         font-size: 2em;
     }
-    header p {
-        font-size: 1em;
+    .document-section h2, .info-section h2 {
+        font-size: 1.8em;
     }
-    section h2 {
-        font-size: 1.6em;
+    .button-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    }
+    main {
+        margin: 20px auto;
+        padding: 0 15px;
     }
     .document-button {
-        padding: 20px;
-        height: 130px;
+        padding: 15px;
     }
     .document-button .icon {
-        font-size: 3em;
+        font-size: 2.5em;
     }
     .document-button .text {
         font-size: 1em;
-    }
-    .button-grid {
-        grid-template-columns: 1fr;
     }
 }
